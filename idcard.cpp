@@ -1,8 +1,12 @@
+
+/*
+PIC 10B 2A, Homework 5
+Purpose: Wallet Printer
+Author: Pritish Patil
+Date: 05/29/2020
+*/
+
 #include "idcard.h"
-
-IDCard::IDCard() : IDNumber(0), dateOfBirth("") {}
-
-IDCard::IDCard(int newIDNumber, string newDateOfBirth) : IDNumber(newIDNumber), dateOfBirth(newDateOfBirth) {}
 
 int IDCard::getIDNumber()
 {
@@ -27,17 +31,21 @@ void IDCard::setDateOfBirth(string newDateOfBirth)
 void IDCard::readInputs()
 {
 	Card::readInputs();
-	cout << "ID number : " << endl;
+	cout << "ID number : ";
 	cin >> IDNumber;
-	cout << "DOB mmddyyyy (0 if not listed) : " << endl;
+	cout << "DOB mmddyyyy (0 if not listed) : ";
 	cin >> dateOfBirth;
+	if (dateOfBirth == "0")
+	{
+		dateOfBirth = "N/A";
+	}
 }
 
 void IDCard::displayCard()
 {
 	Card::displayCard();
-	cout << "|      ID# : " << IDNumber << endl;
-	cout << "|       DOB :  " << dateOfBirth << endl;
+	cout << "|       ID# : " << IDNumber << endl;
+	cout << "|       DOB : " << dateOfBirth << endl;
 	cout << "|" << endl;
 }
 

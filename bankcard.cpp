@@ -1,21 +1,29 @@
+
+/*
+PIC 10B 2A, Homework 5
+Purpose: Wallet Printer
+Author: Pritish Patil
+Date: 05/29/2020
+*/
+
 #include "bankcard.h"
 
-int BankCard::getAccountNumber()
+string BankCard::getAccountNumber()
 {
 	return accountNumber;
 }
 
-int BankCard::getSecurityCode()
+string BankCard::getSecurityCode()
 {
 	return securityCode;
 }
 
-void BankCard::setAccountNumber(int newAccountNumber)
+void BankCard::setAccountNumber(string newAccountNumber)
 {
 	accountNumber = newAccountNumber;
 }
 
-void BankCard::setSecurityCode(int newSecurityCode)
+void BankCard::setSecurityCode(string newSecurityCode)
 {
 	securityCode = newSecurityCode;
 }
@@ -23,24 +31,16 @@ void BankCard::setSecurityCode(int newSecurityCode)
 void BankCard::readInputs()
 {
 	Card::readInputs();
-	cout << "Account number : " << endl;
+	cout << "Account number : ";
 	cin >> accountNumber;
-	cout << "Card Security Code : " << endl;
+	cout << "Card Security Code : ";
 	cin >> securityCode;
 }
 
 void BankCard::displayCard()
 {
 	Card::displayCard();
-	cout << "|      Account# : " << accountNumber << endl;
-	cout << "|       CSC :  " << securityCode << endl;
+	cout << "|  Account# : " << accountNumber << endl;
+	cout << "|       CSC : " << securityCode << endl;
 	cout << "|" << endl;
 }
-//void Card::displayBankCard()
-//{
-//	cout << "Institution name : " << institutionName << endl;
-//	cout << "Card holder name : " << personName << endl;
-//	cout << "Expiration date mmddyyyy (0 if none) : " << expDate << endl;
-//	cout << "Account number : " << accountNumber << endl;
-//	cout << "Card Security Code : " << securityCode << endl;
-//}
